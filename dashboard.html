@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Meta descriptions may be included in search results to concisely summarize page content.">
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"
+        integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdnjs.com/libraries/bodymovin" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.0/lottie.js"></script>
+</head>
+
+<body>
+    <!-- Login wrapper -->
+    <div class="wrapper">
+        <header>
+            <nav class="navbar">
+                <div class="nav-wrapper">
+                    <a href="#!" class="nav-logo" title="Company">
+                        <!-- <img src="./images/dashboard-logo.svg" alt="company" class="hide-on-med-and-down"> -->
+                        <svg width="210" height="42" viewBox="0 0 210 42" fill="none" class="hide-on-med-and-down icon"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_66_54)" class="js-letter-paths">
+                                <path d="M40.1219 2.52H2.56091V39.48H40.1219V2.52Z" stroke="#8145DD" stroke-width="6" id="square"/>
+                                <path d="M29.878 12.6H12.8048V29.4H29.878V12.6Z" fill="#5DD5E9" id="filled-square"/>
+                                <path
+                                    d="M62.4207 8.4C65.164 8.4 67.4432 9.10543 69.2581 10.5163C71.073 11.9272 72.2969 13.8403 72.93 16.2558H69.0998C68.5723 14.8878 67.7281 13.8083 66.5674 13.0173C65.4279 12.205 64.0245 11.7989 62.3574 11.7989C61.0279 11.7989 59.8357 12.1303 58.7805 12.7929C57.7464 13.4555 56.9234 14.4068 56.3114 15.6467C55.7205 16.8651 55.4251 18.2973 55.4251 19.9434C55.4251 21.5679 55.7205 23.0002 56.3114 24.24C56.9234 25.4585 57.7464 26.3991 58.7805 27.0617C59.8357 27.7244 61.0279 28.0557 62.3574 28.0557C64.0245 28.0557 65.4279 27.6603 66.5674 26.8693C67.7281 26.057 68.5723 24.9775 69.0998 23.6308H72.93C72.2969 26.0464 71.073 27.9596 69.2581 29.3704C67.4432 30.7599 65.164 31.4546 62.4207 31.4546C60.3105 31.4546 58.4428 30.9736 56.8179 30.0117C55.193 29.0284 53.9373 27.6709 53.051 25.9394C52.1647 24.1866 51.7216 22.1878 51.7216 19.9434C51.7216 17.6988 52.1647 15.7108 53.051 13.9793C53.9373 12.2264 55.193 10.8583 56.8179 9.87495C58.4428 8.89165 60.3105 8.4 62.4207 8.4ZM84.507 13.37C86.1956 13.37 87.7151 13.7335 89.0656 14.4603C90.4161 15.187 91.4712 16.2345 92.231 17.6026C92.9907 18.9706 93.3706 20.5739 93.3706 22.4123C93.3706 24.272 92.9907 25.886 92.231 27.2541C91.4712 28.6222 90.4161 29.6697 89.0656 30.3965C87.7151 31.1233 86.1956 31.4866 84.507 31.4866C82.8193 31.4866 81.2999 31.1233 79.9488 30.3965C78.6193 29.6697 77.5645 28.6222 76.7836 27.2541C76.0239 25.8646 75.6441 24.2507 75.6441 22.4123C75.6441 20.5739 76.0239 18.9706 76.7836 17.6026C77.5645 16.2345 78.6193 15.187 79.9488 14.4603C81.2999 13.7335 82.8193 13.37 84.507 13.37ZM84.507 16.5445C83.579 16.5445 82.7243 16.7582 81.943 17.1857C81.1625 17.6133 80.5294 18.276 80.0437 19.1738C79.5798 20.0502 79.3473 21.1297 79.3473 22.4123C79.3473 23.7163 79.5798 24.8065 80.0437 25.6829C80.5294 26.5594 81.1625 27.2114 81.943 27.6389C82.7243 28.0664 83.579 28.2802 84.507 28.2802C85.4359 28.2802 86.2904 28.0664 87.0706 27.6389C87.8526 27.2114 88.4749 26.5594 88.9384 25.6829C89.4242 24.8065 89.6666 23.7163 89.6666 22.4123C89.6666 21.1297 89.4242 20.0502 88.9384 19.1738C88.4749 18.276 87.8526 17.6133 87.0706 17.1857C86.2904 16.7582 85.4359 16.5445 84.507 16.5445ZM118.65 13.3059C120.718 13.3059 122.364 13.9685 123.588 15.294C124.833 16.6193 125.455 18.5112 125.455 20.9694V31.2622H121.847V21.3542C121.847 19.8151 121.467 18.6287 120.707 17.795C119.948 16.9399 118.903 16.5124 117.574 16.5124C116.16 16.5124 115.03 16.972 114.186 17.8912C113.363 18.789 112.952 20.1144 112.952 21.8672V31.2622H109.343V21.3542C109.343 19.8151 108.964 18.6287 108.204 17.795C107.444 16.9399 106.399 16.5124 105.07 16.5124C103.656 16.5124 102.527 16.972 101.683 17.8912C100.86 18.789 100.448 20.1144 100.448 21.8672V31.2622H96.8399V13.5945H100.448V17.282C100.891 15.9994 101.631 15.0161 102.664 14.332C103.698 13.6479 104.912 13.3059 106.304 13.3059C107.761 13.3059 109.016 13.6693 110.072 14.3961C111.148 15.1229 111.928 16.1704 112.414 17.5384C112.92 16.2131 113.733 15.1764 114.851 14.4282C115.97 13.68 117.236 13.3059 118.65 13.3059ZM139.672 13.37C141.192 13.37 142.542 13.7335 143.724 14.4603C144.926 15.187 145.866 16.2345 146.541 17.6026C147.216 18.9706 147.554 20.5739 147.554 22.4123C147.554 24.272 147.216 25.886 146.541 27.2541C145.866 28.6222 144.926 29.6697 143.724 30.3965C142.542 31.1233 141.192 31.4866 139.672 31.4866C138.09 31.4866 136.738 31.0912 135.621 30.3003C134.502 29.5094 133.721 28.4619 133.278 27.1579V39.6632H129.669V13.5945H133.278V17.6988C133.721 16.3949 134.502 15.3474 135.621 14.5564C136.738 13.7655 138.09 13.37 139.672 13.37ZM138.564 16.5766C137.552 16.5766 136.643 16.8223 135.842 17.314C135.039 17.7843 134.407 18.4683 133.942 19.3662C133.478 20.2427 133.247 21.258 133.247 22.4123C133.247 23.588 133.478 24.6141 133.942 25.4906C134.407 26.367 135.039 27.051 135.842 27.5427C136.643 28.013 137.552 28.2481 138.564 28.2481C140.168 28.2481 141.455 27.7351 142.426 26.7091C143.397 25.6616 143.882 24.2293 143.882 22.4123C143.882 20.6167 143.397 19.1952 142.426 18.1477C141.455 17.1003 140.168 16.5766 138.564 16.5766ZM158.026 13.37C159.609 13.37 160.958 13.7655 162.077 14.5564C163.196 15.3474 163.987 16.3949 164.451 17.6988V13.5945H168.06V31.2622H164.451V27.1579C163.987 28.4619 163.196 29.5094 162.077 30.3003C160.958 31.0912 159.609 31.4866 158.026 31.4866C156.506 31.4866 155.145 31.1233 153.942 30.3965C152.761 29.6697 151.832 28.6222 151.156 27.2541C150.481 25.886 150.143 24.272 150.143 22.4123C150.143 20.5739 150.481 18.9706 151.156 17.6026C151.832 16.2345 152.761 15.187 153.942 14.4603C155.145 13.7335 156.506 13.37 158.026 13.37ZM159.133 16.5766C157.529 16.5766 156.242 17.1003 155.272 18.1477C154.322 19.1738 153.847 20.5954 153.847 22.4123C153.847 24.2293 154.322 25.6616 155.272 26.7091C156.242 27.7351 157.529 28.2481 159.133 28.2481C160.146 28.2481 161.054 28.013 161.855 27.5427C162.657 27.051 163.29 26.367 163.755 25.4906C164.219 24.6141 164.451 23.588 164.451 22.4123C164.451 21.258 164.219 20.2427 163.755 19.3662C163.29 18.4683 162.657 17.7843 161.855 17.314C161.054 16.8223 160.146 16.5766 159.133 16.5766ZM182.14 13.3059C184.166 13.3059 185.79 13.9685 187.014 15.294C188.239 16.6193 188.851 18.5112 188.851 20.9694V31.2622H185.242V21.3542C185.242 19.7723 184.841 18.5538 184.039 17.6988C183.237 16.8223 182.14 16.3841 180.747 16.3841C179.312 16.3841 178.162 16.8544 177.297 17.795C176.432 18.7142 175.999 20.0716 175.999 21.8672V31.2622H172.39V13.5945H175.999V17.4743C176.463 16.149 177.243 15.1229 178.341 14.3961C179.439 13.6693 180.705 13.3059 182.14 13.3059ZM195.128 13.5945L200.351 26.5808L205.195 13.5945H209.215L198.674 39.6632H194.654L198.42 30.8454L191.077 13.5945H195.128Z"
+                                    fill="#4E4E4E" id="company"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_66_54">
+                                    <rect width="210" height="42" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                        <img src="./images/dashboard-logo-mobile.svg" alt="company"
+                            class="show-on-medium-and-down hide-on-med-and-up">
+                    </a>
+                    <ul>
+                        <li>
+                            <form class="search-form">
+                                <div class="input-field search">
+                                    <input id="search" type="search" placeholder="Search">
+                                    <button type="button" class="btn btn-search">
+                                        <img src="./images/search-ic.svg" alt="search">
+                                    </button>
+                                </div>
+                            </form>
+                        </li>
+                        <li>
+                            <button type="button" class="btn-flat btn-search show-on-medium-and-down" title="Search">
+                                <img src="./images/search-ic.svg" alt="Search">
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn-flat btn-notification" title="Notification">
+                                <img src="./images/notification-ic.svg" alt="Notification">
+                            </button>
+                        </li>
+                        <li>
+                            <a class='dropdown-trigger btn-flat btn-profile' type="menu" href='#'
+                                data-target='profile-dropdown'>
+                                <img src="./images/profile.png" alt="Profile" class="profile">
+                                <div class="profile-content">
+                                    <div>
+                                        <h5>John Doe</h5>
+                                        <h6>Super Admin</h6>
+                                    </div>
+                                    <img src="./images/arrow-downward.svg" alt="arrow" class="arrow">
+                                </div>
+                            </a>
+
+                            <!-- Dropdown Structure -->
+                            <ul id='profile-dropdown' class='dropdown-content'>
+                                <li><a href="#!">Profile</a></li>
+                                <li><a href="#!">Help</a></li>
+                                <li><a href="./login.html">Log out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="content-wrapper">
+            <div class="sidebar-overlay"></div>
+            <div class="sidebar">
+                <ul class="sidebar-list">
+                    <li>
+                        <a href="#" class="menu-btn show-on-large-and-down hide-on-large-only">
+                            <span class="one"></span>
+                            <span class="two"></span>
+                            <span class="three"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./dashboard.html" type="button" class="nav-link active" title="Dashboard">
+                            <!-- <img src="./images/dashboard-ic.svg" alt="dashboard" /> -->
+                            <lottie-player src="./Lottiefiles/dashboard-tile-solid-svgrepo-com 1.json"
+                                background="transparent" speed="0.8" mode="normal" debug
+                                style="width: 30px; height: 30px;" hover class="sidebar-icon"></lottie-player>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./inner-page.html" type="button" class="nav-link" title="User">
+                            <lottie-player src="./Lottiefiles/clarity_users-solid.json" background="transparent"
+                                speed="0.8" mode="normal" debug style="width: 30px; height: 30px;" hover
+                                class="sidebar-icon"></lottie-player>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" type="button" class="nav-link" title="Statistics">
+                            <!-- <img src="./images/statistics-ic.svg" alt="statistics" /> -->
+                            <lottie-player src="./Lottiefiles/bar-chart-ic.json" background="transparent" speed="0.8"
+                                mode="normal" debug style="width: 30px; height: 30px;" hover
+                                class="sidebar-icon"></lottie-player>
+                            <span>Statistics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" type="button" class="nav-link" title="Orders">
+                            <lottie-player src="./Lottiefiles/bag-svgrepo-com.json" background="transparent" speed="0.8"
+                                mode="normal" debug style="width: 30px; height: 30px;" hover
+                                class="sidebar-icon"></lottie-player>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" type="button" class="nav-link" title="Docs">
+                            <lottie-player src="./Lottiefiles/docs-svgrepo-com.json" background="transparent"
+                                speed="0.8" mode="normal" debug style="width: 30px; height: 30px;" hover
+                                class="sidebar-icon"></lottie-player>
+                            <span>Docs</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" type="button" class="nav-link" title="Settings">
+                            <lottie-player src="./Lottiefiles/settings-svgrepo-com 1.json" background="transparent"
+                                speed="0.8" mode="normal" debug style="width: 30px; height: 30px;" hover
+                                class="sidebar-icon"></lottie-player>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <section class="main-content">
+                <h2 class="main-heading split-text">Dashboard</h2>
+                <div class="row">
+                    <div class="col s12 xl6">
+                        <div class="card graph-card">
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <h4 class="rotate-text">Weekly Financial Statics</h4>
+                                    <a class='dropdown-trigger btn-flat btn-menu' href='#' data-target='dropdown1'>
+                                        <img src="./images/menu-horizontal.svg" alt="dropdown">
+                                    </a>
+
+                                    <!-- Dropdown Structure -->
+                                    <ul id='dropdown1' class='dropdown-content'>
+                                        <li><a href="#!">Action 1</a></li>
+                                        <li><a href="#!">Action 2</a></li>
+                                        <li><a href="#!">Action 3</a></li>
+                                    </ul>
+                                </div>
+                                <canvas id="mybarChart" height="300" width="608"
+                                    style="width:100%; max-height:300px; overflow:visible"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 xl6">
+                        <div class="row counter-row">
+                            <div class="col s12 m6 upper-col">
+                                <div class="card counter-card">
+                                    <div class="card-content">
+                                        <h4 class="rotate-text">Sales</h4>
+                                        <div class="card-subheader">
+                                            <span class="counter-card-icon">
+                                                <img src="./images/sales-graph-ic.svg" alt="sales-graph">
+                                            </span>
+                                            <h2 class="card-title"><span class="counter">20.17</span>%</h2>
+                                        </div>
+                                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and
+                                            typesetting industry.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s12 m6 upper-col">
+                                <div class="card counter-card">
+                                    <div class="card-content">
+                                        <h4 class="rotate-text">Profit</h4>
+                                        <div class="card-subheader">
+                                            <span class="counter-card-icon">
+                                                <img src="./images/money-bag-ic.svg" alt="money-bag">
+                                            </span>
+                                            <h2 class="card-title"><span class="counter">45.56</span>%</h2>
+                                        </div>
+                                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and
+                                            typesetting industry.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s12 m6">
+                                <div class="card counter-card">
+                                    <div class="card-content">
+                                        <h4 class="rotate-text">Active Referrals
+                                        </h4>
+                                        <div class="card-subheader">
+                                            <span class="counter-card-icon">
+                                                <img src="./images/network-ic.svg" alt="network">
+                                            </span>
+                                            <h2 class="card-title"><span class="counter">34.89</span>%</h2>
+                                        </div>
+                                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and
+                                            typesetting industry.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s12 m6">
+                                <div class="card counter-card">
+                                    <div class="card-content">
+                                        <h4 class="rotate-text">Opened Invites
+                                        </h4>
+                                        <div class="card-subheader">
+                                            <span class="counter-card-icon">
+                                                <img src="./images/invitation-ic.svg" alt="invitation">
+                                            </span>
+                                            <h2 class="card-title"><span class="counter">67.78</span>%</h2>
+                                        </div>
+                                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and
+                                            typesetting industry.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 xl9">
+                        <div class="card table-card">
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <h4 class="rotate-text">Recent Orders
+                                    </h4>
+                                    <a class='dropdown-trigger btn-flat btn-menu' href='#' data-target='dropdown2'>
+                                        <img src="./images/menu-horizontal.svg" alt="dropdown">
+                                    </a>
+
+                                    <!-- Dropdown Structure -->
+                                    <ul id='dropdown2' class='dropdown-content'>
+                                        <li><a href="#!">Action 1</a></li>
+                                        <li><a href="#!">Action 2</a></li>
+                                        <li><a href="#!">Action 3</a></li>
+                                    </ul>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="responsive-table">
+                                        <thead>
+                                            <tr>
+                                                <th class="order">Order ID</th>
+                                                <th class="name">Customer Name</th>
+                                                <th>Email ID</th>
+                                                <th>Status</th>
+                                                <th>Amount</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>20079</td>
+                                                <td>Kristin Watson</td>
+                                                <td>georgia.young@example.com</td>
+                                                <td class="status success">
+                                                    <span>Delivered</span>
+                                                </td>
+                                                <td>$5,724.00</td>
+                                                <td>
+                                                    <a class='dropdown-trigger btn-flat btn-menu' href='#'
+                                                        data-target='dropdown3'>
+                                                        <img src="./images/menu-horizontal.svg" alt="dropdown">
+                                                    </a>
+
+                                                    <!-- Dropdown Structure -->
+                                                    <ul id='dropdown3' class='dropdown-content'>
+                                                        <li><a href="#!">Action 1</a></li>
+                                                        <li><a href="#!">Action 2</a></li>
+                                                        <li><a href="#!">Action 3</a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>61391</td>
+                                                <td>Guy Hawkins</td>
+                                                <td>curtis.weaver@example.com</td>
+                                                <td class="status success">
+                                                    <span>Delivered</span>
+                                                </td>
+                                                <td> $8,508.00 </td>
+                                                <td>
+                                                    <a class='dropdown-trigger btn-flat btn-menu' href='#'
+                                                        data-target='dropdown4'>
+                                                        <img src="./images/menu-horizontal.svg" alt="dropdown">
+                                                    </a>
+
+                                                    <!-- Dropdown Structure -->
+                                                    <ul id='dropdown4' class='dropdown-content'>
+                                                        <li><a href="#!">Action 1</a></li>
+                                                        <li><a href="#!">Action 2</a></li>
+                                                        <li><a href="#!">Action 3</a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>45904</td>
+                                                <td>Dianne Russell</td>
+                                                <td>tanya.hill@example.com</td>
+                                                <td class="status success">
+                                                    <span>Delivered</span>
+                                                </td>
+                                                <td> $6,432.00 </td>
+                                                <td>
+                                                    <a class='dropdown-trigger btn-flat btn-menu' href='#'
+                                                        data-target='dropdown5'>
+                                                        <img src="./images/menu-horizontal.svg" alt="dropdown">
+                                                    </a>
+
+                                                    <!-- Dropdown Structure -->
+                                                    <ul id='dropdown5' class='dropdown-content'>
+                                                        <li><a href="#!">Action 1</a></li>
+                                                        <li><a href="#!">Action 2</a></li>
+                                                        <li><a href="#!">Action 3</a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>39235</td>
+                                                <td>Jacob Jones</td>
+                                                <td>felicia.reid@example.com</td>
+                                                <td class="status success">
+                                                    <span>Delivered</span>
+                                                </td>
+                                                <td>$2,109.00 </td>
+                                                <td>
+                                                    <a class='dropdown-trigger btn-flat btn-menu' href='#'
+                                                        data-target='dropdown6'>
+                                                        <img src="./images/menu-horizontal.svg" alt="dropdown">
+                                                    </a>
+
+                                                    <!-- Dropdown Structure -->
+                                                    <ul id='dropdown6' class='dropdown-content'>
+                                                        <li><a href="#!">Action 1</a></li>
+                                                        <li><a href="#!">Action 2</a></li>
+                                                        <li><a href="#!">Action 3</a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>10708</td>
+                                                <td>Kathryn Murphy</td>
+                                                <td>debra.holt@example.com</td>
+                                                <td class="status danger">
+                                                    <span>Cancel</span>
+                                                </td>
+                                                <td>$15,000,000.00</td>
+                                                <td>
+                                                    <a class='dropdown-trigger btn-flat btn-menu' href='#'
+                                                        data-target='dropdown7'>
+                                                        <img src="./images/menu-horizontal.svg" alt="dropdown">
+                                                    </a>
+
+                                                    <!-- Dropdown Structure -->
+                                                    <ul id='dropdown7' class='dropdown-content'>
+                                                        <li><a href="#!">Action 1</a></li>
+                                                        <li><a href="#!">Action 2</a></li>
+                                                        <li><a href="#!">Action 3</a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>50963</td>
+                                                <td>Marvin McKinney</td>
+                                                <td>willie.jennings@example.com</td>
+                                                <td class="status success">
+                                                    <span>Delivered</span>
+                                                </td>
+                                                <td>$8,805.00 </td>
+                                                <td>
+                                                    <a class='dropdown-trigger btn-flat btn-menu' href='#'
+                                                        data-target='dropdown8'>
+                                                        <img src="./images/menu-horizontal.svg" alt="dropdown">
+                                                    </a>
+
+                                                    <!-- Dropdown Structure -->
+                                                    <ul id='dropdown8' class='dropdown-content'>
+                                                        <li><a href="#!">Action 1</a></li>
+                                                        <li><a href="#!">Action 2</a></li>
+                                                        <li><a href="#!">Action 3</a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>93046</td>
+                                                <td>Arlene McCoy</td>
+                                                <td>jessica.hanson@example.com</td>
+                                                <td class="status warning">
+                                                    <span>Pending</span>
+                                                </td>
+                                                <td>$6,513.00</td>
+                                                <td>
+                                                    <a class='dropdown-trigger btn-flat btn-menu' href='#'
+                                                        data-target='dropdown9'>
+                                                        <img src="./images/menu-horizontal.svg" alt="dropdown">
+                                                    </a>
+
+                                                    <!-- Dropdown Structure -->
+                                                    <ul id='dropdown9' class='dropdown-content'>
+                                                        <li><a href="#!">Action 1</a></li>
+                                                        <li><a href="#!">Action 2</a></li>
+                                                        <li><a href="#!">Action 3</a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4339</td>
+                                                <td>Robert Fox</td>
+                                                <td>jackson.graham@example.com</td>
+                                                <td class="status success">
+                                                    <span>Delivered</span>
+                                                </td>
+                                                <td>$8,865.00 </td>
+                                                <td>
+                                                    <a class='dropdown-trigger btn-flat btn-menu' href='#'
+                                                        data-target='dropdown10'>
+                                                        <img src="./images/menu-horizontal.svg" alt="dropdown">
+                                                    </a>
+
+                                                    <!-- Dropdown Structure -->
+                                                    <ul id='dropdown10' class='dropdown-content'>
+                                                        <li><a href="#!">Action 1</a></li>
+                                                        <li><a href="#!">Action 2</a></li>
+                                                        <li><a href="#!">Action 3</a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 xl3">
+                        <div class="card progress-card">
+                            <div class="card-content">
+                                <h4 class="rotate-text">Total Cost
+                                </h4>
+                                <div class="progress-list">
+                                    <div class="progress-list-content">
+                                        <div class="progress-list-header">
+                                            <h6>Financial Operation</h6>
+                                            <h6><span class="counter">40</span>%</h6>
+                                        </div>
+                                        <div class="progress">
+                                            <div role="progressbar" aria-valuenow="40" aria-valuemin="0"
+                                                aria-valuemax="100" style="width: 40%; max-width: 40%;"
+                                                class="progress-bar bg-gradient">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-list-content">
+                                        <div class="progress-list-header">
+                                            <h6>Mobile Internet</h6>
+                                            <h6><span class="counter">70</span>%</h6>
+                                        </div>
+                                        <div class="progress rounded-pill">
+                                            <div role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                                                aria-valuemax="100" style="width: 70%; max-width: 70%"
+                                                class="progress-bar rounded-pill bg-gradient"></div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-list-content">
+                                        <div class="progress-list-header">
+                                            <h6>Campaign</h6>
+                                            <h6><span class="counter">60</span>%</h6>
+                                        </div>
+                                        <div class="progress rounded-pill">
+                                            <div role="progressbar" aria-valuenow="60" aria-valuemin="0"
+                                                aria-valuemax="100" style="width: 60%; max-width: 60%;"
+                                                class="progress-bar rounded-pill bg-gradient"></div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-list-content">
+                                        <div class="progress-list-header">
+                                            <h6>Internal cost</h6>
+                                            <h6><span class="counter">30</span>%</h6>
+                                        </div>
+                                        <div class="progress rounded-pill">
+                                            <div role="progressbar" aria-valuenow="30" aria-valuemin="0"
+                                                aria-valuemax="100" style="width: 30%; max-width: 30%;"
+                                                class="progress-bar rounded-pill bg-gradient"></div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-list-content">
+                                        <div class="progress-list-header">
+                                            <h6>Entertainment</h6>
+                                            <h6><span class="counter">45</span>%</h6>
+                                        </div>
+                                        <div class="progress rounded-pill">
+                                            <div role="progressbar" aria-valuenow="45" aria-valuemin="0"
+                                                aria-valuemax="100" style="width: 45%; max-width: 45%;"
+                                                class="progress-bar rounded-pill bg-gradient"></div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-list-content">
+                                        <div class="progress-list-header">
+                                            <h6>Hypermarket</h6>
+                                            <h6><span class="counter">85</span>%</h6>
+                                        </div>
+                                        <div class="progress rounded-pill">
+                                            <div role="progressbar" aria-valuenow="85" aria-valuemin="0"
+                                                aria-valuemax="100" style="width: 85%; max-width: 85%;"
+                                                class="progress-bar rounded-pill bg-gradient"></div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-list-content">
+                                        <div class="progress-list-header">
+                                            <h6>Cafe and Restaurants</h6>
+                                            <h6><span class="counter">65</span>%</h6>
+                                        </div>
+                                        <div class="progress rounded-pill">
+                                            <div role="progressbar" aria-valuenow="65" aria-valuemin="0"
+                                                aria-valuemax="100" style="width: 65%; max-width: 65%;"
+                                                class="progress-bar rounded-pill bg-gradient"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="progress-card-text custom-theme-text text-text-light">Lorem Ipsum is simply
+                                    dummy text of the printing and typesetting industry.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- JavaScripts -->
+    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+/* Import All css here */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@import "materialize.css";
+@import "style.css";
+
+/* Body Hidden till Load the page */
+body:not(.page-loaded) { opacity: 0; overflow: hidden;}
